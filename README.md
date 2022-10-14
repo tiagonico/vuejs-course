@@ -1,11 +1,24 @@
-# vuejs-course
-Shopping Website using Vue.js
+# product-and-cart
 
-To start the application enter the command below on terminal:
-- npm start
+## Project setup
+```
+npm install
+```
 
-In case of errors, try running these commands below:
-- npm install -g concurrently
-- npm install -g sass
-- npm install -g node-sass
-- npm install -g live-server
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

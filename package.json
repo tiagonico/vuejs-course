@@ -1,24 +1,49 @@
 {
   "name": "product-and-cart",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "concurrently \"npm run sass\" \"npm run serve\"",
-    "serve": "live-server --open=/src/app.html --ignore=.git,node_modules",
-    "sass": "node-sass -i -w --output-style=compressed src/styles/style.scss src/styles/style.min.css",
-    "lint": "node-sass -i --output-style=compressed src/styles/style.scss src/styles/style.min.css && npm run sasslint",
-    "sasslint": "sass-lint -c .sass-lint.yml -v -f table"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3"
   },
   "devDependencies": {
-    "concurrently": "^7.0.0",
-    "live-server": "^1.2.1",
-    "node-sass": "^7.0.1",
-    "normalize.css": "^8.0.1",
-    "sass-lint": "^1.13.1",
-    "tjw-sasslint-rules": "^2.1.0"
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-standard": "^6.1.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-vue": "^8.0.3"
   },
-  "keywords": [],
-  "author": "TheJaredWilcurt/Gwendolyn Faraday",
-  "license": "MIT"
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "@vue/standard"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
 }
