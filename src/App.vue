@@ -17,7 +17,7 @@
       <span>Cart ({{ totalQuantity }})</span>
     </div>
   </header>
-  <router-view :inventory="inventory"/>
+  <router-view :inventory="inventory" :addToCart="addToCart"/>
   <MySidebar
     v-if="showSidebar"
     :toogle="toogleSideBar"
@@ -53,12 +53,11 @@ export default {
     }
   },
   methods: {
-    addToCart (name, index) {
+    addToCart (name, quantity) {
       if (!this.cart[name]) {
         this.cart[name] = 0
       }
-      this.cart[name] += this.inventory[index].quantity
-      this.inventory[index].quantity = 0
+      this.cart[name] += quantity
       console.log(this.cart)
     },
     toogleSideBar () {
@@ -67,6 +66,9 @@ export default {
     removeItem (name) {
       delete this.cart[name]
     }
+  },
+  async mounted () {
+    console.log(this.inventory)
   }
 }
 </script>
